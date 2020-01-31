@@ -16,7 +16,7 @@ export class CardlistComponent implements OnInit {
 
   ngOnInit() {
     this.data.getConfig().subscribe((val)=>this.moster=(val))
-    console.log(this.moster)
+    console.log("cardlist",this.moster)
 
 }
 
