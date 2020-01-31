@@ -12,8 +12,8 @@ export class DataService {
    configUrl = 'https://jsonplaceholder.typicode.com/users';
 
 
-   getConfig():Observable<Info[]>{
-     return this.http.get<Info[]>(this.configUrl);
+   getConfig():Observable<any>{
+     return this.http.get(this.configUrl);
    }
 
 

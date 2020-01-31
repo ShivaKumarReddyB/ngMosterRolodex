@@ -10,13 +10,13 @@ import { DataService} from '../data.service';
 export class CardlistComponent implements OnInit {
 
  public moster=[]
- monster;
+
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.getConfig().subscribe((val)=>this.moster.push(val))
-    this.monster=this.moster[0]
+    this.data.getConfig().subscribe((val)=>this.moster=(val))
+    console.log(this.moster)
 
 }
 
