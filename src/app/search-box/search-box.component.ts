@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-search-box',
@@ -6,18 +7,26 @@ import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
   styleUrls: ['./search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit {
-
-  @Output() searchEvent= new EventEmitter();
+  @Output() searchEvent = new EventEmitter();
 
   searchField = '';
+  monster = [];
+  filterMonsters = [];
 
-  constructor() { }
+  constructor(private data: DataService) {}
 
   ngOnInit() {
+    this.data.getConfig().subscribe(val => (this.monster = val));
+
   }
   searchChange() {
-    this.searchEvent.emit(this.searchField);
-    console.log('searchText', this.searchField);
+    this.filterMonsters = this.monster.filter(m =>
+      m.name.toLowerCase().includes(this.searchField.toLowerCase())
+    );
+    console.log( 'filter',this.filterMonsters);
+    this.searchEvent.emit(this.filterMonsters);
   }
 
+
+  // console.log('searchText', this.searchField);
 }
