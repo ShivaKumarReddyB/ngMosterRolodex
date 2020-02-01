@@ -7,6 +7,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { CardComponent } from './card/card.component';
 import { CardlistComponent } from './cardlist/cardlist.component';
 import { SearchBoxComponent } from './search-box/search-box.component'
+import { FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchBoxComponent } from './search-box/search-box.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,24 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService} from '../data.service';
-
+import { Component, OnInit,OnChanges } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-cardlist',
   templateUrl: './cardlist.component.html',
   styleUrls: ['./cardlist.component.css']
 })
-export class CardlistComponent implements OnInit {
+export class CardlistComponent implements OnInit, OnChanges {
+  public moster = [];
 
- public moster=[]
+  searchText = '';
+  filterMonsters;
 
+  constructor(private data: DataService) {
+    console.log(this.moster);
 
-  constructor(private data: DataService) { }
+  }
 
   ngOnInit() {
-    this.data.getConfig().subscribe((val)=>this.moster=(val))
-    console.log("cardlist",this.moster)
-
-}
-
+    this.data.getConfig().subscribe(val => (this.moster = val));
+    console.log('cardlist', this.moster);
+  }
+  ngOnChanges(){
+    this.filterMonsters = this.moster.filter(m =>
+      m.name.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+    console.log(this.filterMonsters,'lifecyle')
+  }
 
 }

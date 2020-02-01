@@ -1,2 +1,12 @@
+<app-search-box (searchEvent)='searchText=$event' > </app-search-box>
+{{searchText}}  {{filterMonsters}}
+<div class="card-list">
 
-<app-card [data]='moster'></app-card>
+  <div class="card-container" *ngFor="let item of moster">
+
+    <img src='https://robohash.org/{{item.id}}?set=set2&size=180x180' alt="monsters" />
+    <h1> {{item.name}}</h1>
+
+  </div>
+
+</div>

@@ -1,14 +1,6 @@
-<!-- <div *ngFor="let items of data">
-<img src='https://robohash.org/{{items.id}}?set=set4&size=180x180' alt="monsters"/>
-{{items.name}}
-</div> -->
+<div class="card-container" *ngFor="let item of data">
 
-<div *ngFor="let item of data">
-  <div>
-    <img
-      src='https://robohash.org/{{item.id}}?set=set1&size=180x180'
-      alt="monsters"
-    />
-    {{item.name}}
-  </div>
+  <img src='https://robohash.org/{{item.id}}?set=set2&size=180x180' alt="monsters" />
+  <h1> {{item.name}}</h1>
+
 </div>
