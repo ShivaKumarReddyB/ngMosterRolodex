@@ -1,5 +1,6 @@
-<app-search-box (searchEvent)='searchText=$event' > </app-search-box>
-{{searchText}}
+<h1>Monster</h1>
+<app-search-box (searchEvent)='filterArr($event)' > </app-search-box>
+
 <div class="card-list">
 
   <div class="card-container" *ngFor="let item of moster">

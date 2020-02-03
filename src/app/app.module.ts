@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
-import { CardComponent } from './card/card.component';
+
 import { CardlistComponent } from './cardlist/cardlist.component';
 import { SearchBoxComponent } from './search-box/search-box.component'
 import { FormsModule} from '@angular/forms'
@@ -12,7 +12,7 @@ import { FormsModule} from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
+
     CardlistComponent,
     SearchBoxComponent,
 

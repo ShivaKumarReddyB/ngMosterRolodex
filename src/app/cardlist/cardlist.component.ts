@@ -26,5 +26,13 @@ export class CardlistComponent implements OnInit, OnChanges {
 
   ngOnChanges(){}
 
+  filterArr($event:any){
+    this.filterMonsters= $event;
+
+    console.log('f',this.filterMonsters);
+    this.moster=this.filterMonsters;
+    console.log('m', this.moster);
+  }
+
 
 }
